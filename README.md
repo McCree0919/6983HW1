@@ -15,7 +15,8 @@ Open the project in Unity 6000.3.24f1, open `Assets/Scenes/PhysicsChamber.unity`
 - **Roadblock:** `ChamberSensor` only reacts to the Actor. It disables the gate, recolors the sensor and logs once.
 - **Deposit:** `DepositZone` only counts the crate, fully inside the zone, entering after unlock. Logs elapsed time on success.
 - **Restart:** resets positions, velocity, gate, sensor and timer.
-| | Actor | Payload |
+
+| Setting | Actor | Payload |
 | --- | ---: | ---: |
 | Mass | 2 | 3.5 |
 | Linear damping | 1.4 | 0.65 |
@@ -46,4 +47,3 @@ Unity.exe -batchmode -projectPath "<copy>" -executeMethod PhysicsChamber.Editor.
 ```
  
 Don't add `-quit`, since it exits on its own. If you had the project open before the collision fix, restart Unity.
- 
