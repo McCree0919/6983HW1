@@ -12,6 +12,7 @@ namespace PhysicsChamber
         public Material unlockedMaterial;
         public bool Unlocked { get; private set; }
         public bool Complete { get; private set; }
+        public int Attempt { get; private set; }
         public float Elapsed => Complete ? finalTime : Time.timeSinceLevelLoad - startedAt;
         private float startedAt;
         private float finalTime;
@@ -47,6 +48,8 @@ namespace PhysicsChamber
 
         public void Restart()
         {
+            // Invalidate trigger eligibility from the previous attempt.
+            Attempt++;
             ResetBody(actor, actorStart);
             ResetBody(payload, payloadStart);
             roadblock.SetActive(true);
